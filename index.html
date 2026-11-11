@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tandia Mall — Winter Collection | Cash on Delivery</title>
+<meta name="description" content="Tandia Mall — everything you need: gadgets, fashion, beauty, home essentials and more, with Cash on Delivery all over Bangladesh. Order by Messenger or WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green:#006a4e; --green-dark:#04513c; --teal:#0d9488; --amber:#f59e0b; --warm:#ff8c42;
+    --ink:#1e293b; --muted:#64748b; --bg:#f4f8f6; --card:#ffffff; --wa:#25d366; --ms:#0084ff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Hind Siliguri','Inter',system-ui,sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; }
+  img { max-width:100%; display:block; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 14px; }
+
+  header.site { background:var(--green); color:#fff; position:sticky; top:0; z-index:10; box-shadow:0 2px 10px rgba(0,0,0,.18); }
+  .header-in { display:flex; align-items:center; gap:12px; padding:10px 0; }
+  .header-in img.logo { width:46px; height:46px; border-radius:10px; background:#fff; }
+  .brand h1 { font-size:1.35rem; line-height:1.1; font-weight:700; }
+  .brand p { font-size:.82rem; color:#bbf7d0; }
+  .header-wa { margin-left:auto; background:var(--wa); color:#06310f; font-weight:700; text-decoration:none;
+    padding:10px 16px; border-radius:999px; font-size:.95rem; white-space:nowrap; }
+  .header-wa:active { transform:scale(.97); }
+
+  .hero { background:var(--green); padding:0 0 8px; }
+  .hero img { width:100%; border-radius:0 0 18px 18px; }
+
+  .trust { background:#fff; border-bottom:1px solid #e2e8f0; }
+  .trust-in { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; padding:14px 0; }
+  .trust-item { display:flex; gap:9px; align-items:flex-start; font-size:.92rem; font-weight:600; }
+  .trust-item .ic { flex:0 0 34px; width:34px; height:34px; border-radius:50%; background:#e6f4ef; color:var(--green);
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1rem; }
+  .trust-item small { display:block; font-weight:400; color:var(--muted); font-size:.8rem; }
+
+  section.products { padding:22px 0 6px; }
+  section.products h2 { font-size:1.45rem; font-weight:700; color:var(--green-dark); }
+  section.products .sub { color:var(--muted); font-size:.95rem; margin-bottom:16px; }
+  .grid { display:grid; grid-template-columns:1fr; gap:16px; }
+  @media (min-width:600px) { .grid { grid-template-columns:repeat(2,1fr); } .trust-in { grid-template-columns:repeat(4,1fr); } }
+  @media (min-width:960px) { .grid { grid-template-columns:repeat(3,1fr); } }
+  .card { background:var(--card); border-radius:16px; overflow:hidden; box-shadow:0 2px 10px rgba(15,60,45,.08);
+    display:flex; flex-direction:column; }
+  .card img { width:100%; aspect-ratio:4/3; object-fit:cover; }
+  .card-body { padding:14px 16px 16px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .card h3 { font-size:1.06rem; line-height:1.3; }
+  .benefit { color:#475569; font-size:.93rem; flex:1; }
+  .price .now { font-size:1.5rem; font-weight:800; color:var(--green); }
+  .price .old { color:#94a3b8; text-decoration:line-through; font-size:1.02rem; margin-left:6px; }
+  .dnote { font-size:.8rem; color:var(--muted); }
+  .btns { display:flex; flex-direction:column; gap:8px; margin-top:4px; }
+  .btn { text-align:center; text-decoration:none; font-weight:700; padding:12px 10px; border-radius:10px; font-size:1rem; }
+  .btn.wa { background:var(--wa); color:#052e0e; }
+  .btn.ms { background:#e7f2ff; color:#005bb5; border:1px solid #bcdcff; }
+  .btn:active { transform:scale(.98); }
+  .card.soon { opacity:.85; }
+  .card.soon img { filter:grayscale(.4); }
+  .badge { align-self:flex-start; background:var(--amber); color:#451a03; font-weight:700; font-size:.85rem;
+    padding:5px 12px; border-radius:999px; }
+
+  section.how { background:#fff; margin:26px 0 0; padding:24px 0 28px; border-top:1px solid #e2e8f0; }
+  section.how h2 { font-size:1.4rem; color:var(--green-dark); margin-bottom:14px; }
+  .steps { display:grid; grid-template-columns:1fr; gap:12px; }
+  @media (min-width:700px) { .steps { grid-template-columns:repeat(4,1fr); } }
+  .step { background:var(--bg); border-radius:14px; padding:14px; }
+  .step .n { width:32px; height:32px; border-radius:50%; background:var(--green); color:#fff; font-weight:800;
+    display:flex; align-items:center; justify-content:center; margin-bottom:8px; }
+  .step p { font-size:.93rem; }
+  .charges { margin-top:16px; background:#fff7ed; border:1px solid #fed7aa; border-radius:12px; padding:12px 14px; font-size:.95rem; }
+
+  footer.site { background:var(--green-dark); color:#d1fae5; padding:26px 0 90px; margin-top:0; }
+  footer.site h3 { color:#fff; font-size:1.15rem; margin-bottom:6px; }
+  footer.site p { font-size:.92rem; margin-bottom:4px; }
+  footer.site a { color:#fde68a; text-decoration:none; font-weight:600; }
+
+  .sticky-order { position:fixed; left:0; right:0; bottom:0; background:#fff; border-top:1px solid #e2e8f0;
+    padding:10px 14px; display:flex; gap:10px; z-index:20; }
+  .sticky-order a { flex:1; text-align:center; text-decoration:none; font-weight:700; padding:12px; border-radius:10px; }
+  .sticky-order .wa { background:var(--wa); color:#052e0e; }
+  .sticky-order .ms { background:var(--ms); color:#fff; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap header-in">
+    <img class="logo" src="assets/logo.png" alt="Tandia Mall logo">
+    <div class="brand">
+      <h1>Tandia Mall</h1>
+      <p>Cash on Delivery — সারা দেশে হোম ডেলিভারি</p>
+    </div>
+    <a class="header-wa" href="https://wa.me/8801612493066?text=Assalamu%20Alaikum%21%20Ami%20Tandia%20Mall%20theke%20order%20korte%20chai." target="_blank" rel="noopener">WhatsApp Order</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap" style="padding:0;">
+    <img src="assets/hero-winter.png" alt="Tandia Mall — Winter Collection, Cash on Delivery সারা দেশে">
+  </div>
+</div>
+
+<div class="trust">
+  <div class="wrap trust-in">
+    <div class="trust-item"><span class="ic">৳</span><span>Cash on Delivery<small>পণ্য হাতে পেয়ে টাকা দিন</small></span></div>
+    <div class="trust-item"><span class="ic">✓</span><span>Home Delivery — All Over Bangladesh<small>ঢাকা থেকে টেকনাফ, সব জেলায়</small></span></div>
+    <div class="trust-item"><span class="ic">↺</span><span>Easy Replacement<small>ভাঙা/নষ্ট পণ্যে সহজ replacement</small></span></div>
+    <div class="trust-item"><span class="ic">✆</span><span>Order by WhatsApp / Messenger<small>কল করে confirm করে তবেই পাঠাই</small></span></div>
+  </div>
+</div>
+
+<section class="products">
+  <div class="wrap">
+    <h2>❄️ Winter Collection</h2>
+    <p class="sub">প্রতিটি পণ্য যাচাই করে তালিকায় রাখা — অর্ডার করতে শুধু Order Now চাপুন।</p>
+    <div class="grid">
+      <article class="card">
+        <img src="assets/bedsheet.jpg" alt="Waterproof Bedsheet — 68×84 ইঞ্চি" loading="lazy">
+        <div class="card-body">
+          <h3>Waterproof Bedsheet — 68×84 ইঞ্চি</h3>
+          <p class="benefit">পানি পড়লেও তোষক থাকবে শুকনো! উন্নত মানের চায়না ফেব্রিক, সাইজ 68×84 ইঞ্চি (শুধু বিছানার চাদর, বালিশের কভার নেই)। বাচ্চা ও বয়স্কদের ঘরের জন্য অবশ্য প্রয়োজনীয়।</p>
+          <p class="price"><span class="now">৳1,050</span></p>
+          <p class="dnote">Delivery: Dhaka ৳60 · Outside Dhaka ৳120</p>
+          <div class="btns">
+            <a class="btn ms" href="https://m.me/TandiaMall" target="_blank" rel="noopener" style="background:#0084ff;color:#fff;border:none;">Order Now — Messenger</a>
+            <a class="btn wa" href="https://wa.me/8801612493066?text=Assalamu%20Alaikum%21%20Ami%20Waterproof%20Bedsheet%20%28%E0%A7%B31%2C050%29%20order%20korte%20chai." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="assets/hoodie.jpg" alt="Premium Stylish Hoodie" loading="lazy">
+        <div class="card-body">
+          <h3>Premium Stylish Hoodie</h3>
+          <p class="benefit">Export Quality Zip-Up Hoodie — 98% Cotton + 2% Spandex, 300+ GSM। Front zipper, adjustable hood, kangaroo pocket। সাইজ: M / L / XL / XXL।</p>
+          <p class="price"><span class="now">৳790</span></p>
+          <p class="dnote">Delivery: Dhaka ৳60 · Outside Dhaka ৳120</p>
+          <div class="btns">
+            <a class="btn ms" href="https://m.me/TandiaMall" target="_blank" rel="noopener" style="background:#0084ff;color:#fff;border:none;">Order Now — Messenger</a>
+            <a class="btn wa" href="https://wa.me/8801612493066?text=Assalamu%20Alaikum%21%20Ami%20Premium%20Stylish%20Hoodie%20%28%E0%A7%B3790%29%20order%20korte%20chai." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="assets/comforter.jpg" alt="Cotton Comforter — 7×7.5 ফিট" loading="lazy">
+        <div class="card-body">
+          <h3>Cotton Comforter — 7×7.5 ফিট</h3>
+          <p class="benefit">সুতি কাপড়ের লাইটওয়েট কম্ফর্টার — ৮ আউন্স ফেদার টাচ ফাইবার, ওজন ২ কেজি+। ডিজিটাল কুইল্টিং সেলাই, সাথে প্রিমিয়াম সেলুলার ব্যাগ।</p>
+          <p class="price"><span class="now">৳1,390</span></p>
+          <p class="dnote">Delivery: Dhaka ৳60 · Outside Dhaka ৳120</p>
+          <div class="btns">
+            <a class="btn ms" href="https://m.me/TandiaMall" target="_blank" rel="noopener" style="background:#0084ff;color:#fff;border:none;">Order Now — Messenger</a>
+            <a class="btn wa" href="https://wa.me/8801612493066?text=Assalamu%20Alaikum%21%20Ami%20Cotton%20Comforter%20%28%E0%A7%B31%2C390%29%20order%20korte%20chai." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="assets/blanket.jpg" alt="Baby Blanket — 0 থেকে 10 মাস" loading="lazy">
+        <div class="card-body">
+          <h3>Baby Blanket — 0 থেকে 10 মাস</h3>
+          <p class="benefit">নরম ফ্ল্যাপি কাপড়ের বেবি বিয়ার স্লিপিং ব্যাগ — শিশুকে আরামে জড়িয়ে রাখে, ঘুমের সময় দেয় উষ্ণতা। ০–১০ মাস বয়সী শিশুর জন্য।</p>
+          <p class="price"><span class="now">৳450</span></p>
+          <p class="dnote">Delivery: Dhaka ৳60 · Outside Dhaka ৳120</p>
+          <div class="btns">
+            <a class="btn ms" href="https://m.me/TandiaMall" target="_blank" rel="noopener" style="background:#0084ff;color:#fff;border:none;">Order Now — Messenger</a>
+            <a class="btn wa" href="https://wa.me/8801612493066?text=Assalamu%20Alaikum%21%20Ami%20Baby%20Blanket%20%28%E0%A7%B3450%29%20order%20korte%20chai." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <img src="assets/knives.jpg" alt="Zepter Kitchen Knife Set — 6 পিস" loading="lazy">
+        <div class="card-body">
+          <h3>Zepter Kitchen Knife Set — 6 পিস</h3>
+          <p class="benefit">৪টি ছুরি + ১টি কাঁচি + ১টি সিরামিক পিলার। Non-stick coating, rust-proof, ধারালো V-angle ব্লেড, ergonomic non-slip হাতল।</p>
+          <p class="price"><span class="now">৳1,050</span></p>
+          <p class="dnote">Delivery: Dhaka ৳60 · Outside Dhaka ৳120</p>
+          <div class="btns">
+            <a class="btn ms" href="https://m.me/TandiaMall" target="_blank" rel="noopener" style="background:#0084ff;color:#fff;border:none;">Order Now — Messenger</a>
+            <a class="btn wa" href="https://wa.me/8801612493066?text=Assalamu%20Alaikum%21%20Ami%20Zepter%20Kitchen%20Knife%20Set%20%28%E0%A7%B31%2C050%29%20order%20korte%20chai." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </article>
+      </div>
+</section>
+
+<section class="how">
+  <div class="wrap">
+    <h2>কীভাবে অর্ডার করবেন?</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><p><strong>পণ্য বেছে Order Now চাপুন</strong> — WhatsApp বা Messenger এ message তৈরি হয়ে যাবে।</p></div>
+      <div class="step"><div class="n">2</div><p><strong>আপনার নাম, মোবাইল নম্বর ও ঠিকানা পাঠান</strong> — এই ৩টি তথ্যই যথেষ্ট।</p></div>
+      <div class="step"><div class="n">3</div><p><strong>আমরা কল করে confirm করব</strong> — তারপরই পণ্য পাঠানো হবে।</p></div>
+      <div class="step"><div class="n">4</div><p><strong>পণ্য হাতে পেয়ে টাকা দিন</strong> — Cash on Delivery, আগে কোনো টাকা নয়।</p></div>
+    </div>
+    <div class="charges"><strong>Delivery Charge:</strong> Dhaka ৳60 · Outside Dhaka ৳120 — কোনো hidden charge নেই।</div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <h3>Tandia Mall</h3>
+    <p>Dhaka, Bangladesh</p>
+    <p>WhatsApp: <a href="https://wa.me/8801612493066?text=Assalamu%20Alaikum%21%20Ami%20Tandia%20Mall%20theke%20order%20korte%20chai." target="_blank" rel="noopener">+8801612493066</a></p>
+    <p>Messenger: <a href="https://m.me/TandiaMall" target="_blank" rel="noopener">Tandia Mall Page</a></p>
+    <p>Prices include no hidden charges — delivery charge applies.</p>
+  </div>
+</footer>
+
+<div class="sticky-order">
+  <a class="wa" href="https://wa.me/8801612493066?text=Assalamu%20Alaikum%21%20Ami%20Tandia%20Mall%20theke%20order%20korte%20chai." target="_blank" rel="noopener">WhatsApp এ অর্ডার করুন</a>
+  <a class="ms" href="https://m.me/TandiaMall" target="_blank" rel="noopener">Messenger</a>
+</div>
+
+</body>
+</html>
